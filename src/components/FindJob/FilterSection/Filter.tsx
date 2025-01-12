@@ -4,31 +4,38 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select"
-import { useState } from "react"
+} from "@/components/ui/select";
 
-const Filter = ({ icon, options, placeholder }: { icon: React.ReactElement, options: Option[], placeholder: string }) => {
-    const [val, setVal] = useState('')
+type FilterProps = {
+    icon: React.ReactElement;
+    options: Option[];
+    placeholder: string;
+    onChange: (value: string) => void;
+    defaultValue: string;
+};
+
+const Filter = ({ icon, options, placeholder, onChange, defaultValue }: FilterProps) => {
+    const handleValueChange = (newVal: string) => {
+        onChange(newVal);
+    };
+
     return (
-
         <div className="flex w-1/5 items-center gap-2 border-r border-gray-400 px-4 text-white">
             {icon}
-            <Select onValueChange={(newVal) => setVal(newVal)}>
-                {val ? <SelectTrigger className="w-[180px] text-white">
+            <Select onValueChange={handleValueChange} value={defaultValue}>
+                <SelectTrigger className={`w-[180px] ${defaultValue ? "text-white" : "text-gray-600"}`}>
                     <SelectValue placeholder={placeholder} />
-                </SelectTrigger> : <SelectTrigger className="w-[180px] text-gray-600">
-                    <SelectValue placeholder={placeholder} />
-                </SelectTrigger>}
-
+                </SelectTrigger>
                 <SelectContent>
-                    {options.map(option => (
-                        <SelectItem value={option.value}>{option.label}</SelectItem>
+                    {options.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                            {option.label}
+                        </SelectItem>
                     ))}
-
                 </SelectContent>
             </Select>
         </div>
-    )
-}
+    );
+};
 
-export default Filter
+export default Filter;

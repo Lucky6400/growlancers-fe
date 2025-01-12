@@ -24,3 +24,9 @@ export const salaryTypes = [
     { label: 'Per Year', value: 'Per Year' },
     { label: 'Per Hour', value: 'Per Hour' },
 ];
+
+export const salaryTypeRanges = {
+    "Per Month": { min: 1000, max: 10000 },
+    "Per Year": { min: 12000, max: 120000 },
+    "Per Hour": { min: 10, max: 100 },
+};

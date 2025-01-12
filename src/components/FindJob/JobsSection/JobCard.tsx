@@ -13,6 +13,7 @@ type JobCardProps = {
     salary: string;
     jobId: number;
     color: string;
+    isApplied?: boolean;
 };
 
 // JobCard Component
@@ -24,7 +25,8 @@ const JobCard = ({
     location,
     salary,
     jobId,
-    color
+    color,
+    isApplied,
 }: JobCardProps) => {
 
     const [bookmarks, setBookmarks] = useState<number[]>([])
@@ -36,16 +38,17 @@ const JobCard = ({
                 : [...prevBookmarks, id]
         );
     };
-    
+
     return (
         <div className="p-1 border-gray-400 border rounded-xl max-w-full w-72">
             <div className={"w-full p-2 rounded-xl " + color}>
                 <div className="flex w-full mb-3 justify-between">
                     <p className="bg-white py-1 px-2 text-sm rounded-full">{date}</p>
-                    <button onClick={() => onAddToBookmark(jobId)}>
+                    {isApplied ? <></> : <button onClick={() => onAddToBookmark(jobId)}>
                         {bookmarks.includes(jobId) ? <BookMarkedIcon /> : <BookmarkPlusIcon />}
 
-                    </button>
+                    </button>}
+
                 </div>
                 <p className="text-sm font-semibold text-gray-600">{company}</p>
                 <p className="text-xl mt-2 mb-3">{position}</p>
@@ -61,9 +64,10 @@ const JobCard = ({
                 </div>
                 <p className="text-sm mt-4 text-gray-700">{location}</p>
             </div>
+            {isApplied && <p className="text-sm mt-4 font-semibold text-gray-600">Applied on {new Date(date).toDateString()}</p>}
             <p className="text-xl my-2 p-2 font-semibold text-green-900">{salary}</p>
             <div className="flex w-full p-2 pt-0 items-center gap-2">
-                <Button>Apply</Button>
+                {!isApplied && <Button>Apply</Button>}
                 <Button>Details</Button>
                 <Button className="bg-red-700 hover:bg-red-900">
                     Report <CiWarning />
