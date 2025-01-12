@@ -13,6 +13,9 @@ interface RootState {
     },
     message: {
         currentMsg: Message
+    },
+    theme: {
+        theme: string
     }
 }
 

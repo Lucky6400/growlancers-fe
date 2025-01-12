@@ -9,7 +9,7 @@ import { HiMenuAlt3 } from "react-icons/hi";  // Unique Hamburger Icon
 
 const Header = () => {
   const dispatch = useDispatch();
-  const theme = useSelector((state) => state.theme.theme);
+  const theme = useSelector((state: RootState) => state.theme.theme);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Function to toggle the theme
