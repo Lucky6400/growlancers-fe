@@ -1,13 +1,13 @@
 export const components: { title: string; href: string; description: string }[] = [
     {
         title: "Find A Job",
-        href: "/docs/primitives/alert-dialog",
+        href: "/",
         description:
             "A page to find a job from various sources.",
     },
     {
         title: "Messages",
-        href: "/docs/primitives/alert-dialog",
+        href: "/messages",
         description:
             "Check for messages from recruiters or clients.",
     },
@@ -19,7 +19,7 @@ export const components: { title: string; href: string; description: string }[] 
     },
     {
         title: "FAQ",
-        href: "/docs/primitives/alert-dialog",
+        href: "/faq",
         description:
             "Get all your doubts cleared or ask if you have any questions.",
     }
