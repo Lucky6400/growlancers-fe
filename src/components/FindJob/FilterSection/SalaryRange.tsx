@@ -31,7 +31,7 @@ const SalaryRange = ({ salaryType, onChange }: SalaryRangeProps) => {
     };
 
     return (
-        <div className="w-1/5 px-4">
+        <div className="w-1/5  max-md:w-full px-4">
             <div className="flex items-center gap-4 text-white mb-3">
                 <p>Salary Range</p>
                 <p>${range.min} - ${val}</p>

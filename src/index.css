@@ -10,3 +10,11 @@
     --radius: 0.5rem
   }
 }
+html {
+  @apply bg-gray-100 text-gray-900; /* Default light mode styles */
+}
+
+html.dark {
+  @apply bg-gray-900 text-gray-100; /* Dark mode styles */
+}
+

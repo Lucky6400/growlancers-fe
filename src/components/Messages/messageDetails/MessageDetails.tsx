@@ -27,7 +27,7 @@ const MessageDetails: React.FC = () => {
   };
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md relative h-screen overflow-y-auto">
+    <div className="p-4 bg-white rounded-lg shadow-md relative h-screen overflow-y-auto dark:bg-gray-800 dark:text-white">
       {currentMsg && currentMsg?.messages.map((msg, idx) => (
         <div
           key={msg.message + idx}
@@ -35,11 +35,13 @@ const MessageDetails: React.FC = () => {
         >
           <div
             className={`inline-block px-4 py-2 rounded-lg ${
-              msg.sender === "Freelancer" ? "bg-green-100" : "bg-gray-100"
+              msg.sender === "Freelancer" 
+                ? "bg-green-500 dark:bg-green-700 text-white" 
+                : "bg-gray-100 dark:bg-gray-600 text-gray-900"
             }`}
           >
             <p className="text-sm">{msg.message}</p>
-            <span className="block text-xs text-gray-500">{msg.time}</span>
+            <span className="block text-xs text-gray-500 dark:text-gray-400">{msg.time}</span>
           </div>
         </div>
       ))}
@@ -51,11 +53,11 @@ const MessageDetails: React.FC = () => {
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
           placeholder="Type a message..."
-          className="flex-grow px-2 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="flex-grow px-2 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white dark:border-gray-600"
         />
         <Button
           onClick={sendMessage}
-         
+          className="bg-green-500 hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-800 text-white"
         >
           Send
         </Button>

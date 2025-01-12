@@ -20,7 +20,7 @@ const Filter = ({ icon, options, placeholder, onChange, defaultValue }: FilterPr
     };
 
     return (
-        <div className="flex w-1/5 items-center gap-2 border-r border-gray-400 px-4 text-white">
+        <div className="flex w-1/5 max-md:w-full items-center gap-2 border-r border-gray-400 px-4 text-white">
             {icon}
             <Select onValueChange={handleValueChange} value={defaultValue}>
                 <SelectTrigger className={`w-[180px] ${defaultValue ? "text-white" : "text-gray-600"}`}>
