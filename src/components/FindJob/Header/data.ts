@@ -13,7 +13,7 @@ export const components: { title: string; href: string; description: string }[] 
     },
     {
         title: "Applies",
-        href: "/docs/primitives/alert-dialog",
+        href: "/applies",
         description:
             "Checkout all the jobs you've applied for.",
     },

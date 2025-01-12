@@ -6,7 +6,7 @@ const SalaryRange = () => {
 
     //Todo: min and max values based on salary type
     return (
-        <div>
+        <div className="w-1/5 px-4">
             <div className="flex items-center gap-4 text-white mb-3">
                 <p>Salary Range</p>
                 <p>$400 - ${val}</p>

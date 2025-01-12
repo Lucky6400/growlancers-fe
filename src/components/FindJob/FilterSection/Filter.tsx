@@ -11,7 +11,7 @@ const Filter = ({ icon, options, placeholder }: { icon: React.ReactElement, opti
     const [val, setVal] = useState('')
     return (
 
-        <div className="flex items-center gap-2 border-r border-gray-400 pr-4 text-white">
+        <div className="flex w-1/5 items-center gap-2 border-r border-gray-400 px-4 text-white">
             {icon}
             <Select onValueChange={(newVal) => setVal(newVal)}>
                 {val ? <SelectTrigger className="w-[180px] text-white">

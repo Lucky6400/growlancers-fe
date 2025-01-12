@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from "@/components/SearchBar/SearchBar";
-import MessageList from "@/components/messageList/MessageList";
-import MessageDetails from "@/components/messageDetails/MessageDetails";
+import MessageList from "@/components/Messages/messageList/MessageList";
+import MessageDetails from "@/components/Messages/messageDetails/MessageDetails";
 import "./MessagingPage.css";
 
 const MessagingPage: React.FC = () => {

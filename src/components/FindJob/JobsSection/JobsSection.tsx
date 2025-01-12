@@ -7,11 +7,16 @@ import {
 } from "@/components/ui/select"
 import JobCard from "./JobCard"
 import { jobData } from "./data"
-const JobsSection = () => {
+
+type Props = {
+    applies?: boolean,
+    title: string,
+}
+const JobsSection = (props: Props) => {
     return (
-        <section className="w-3/4 p-4">
+        <section className={"p-4 " + (props.applies ? 'w-full' : 'w-3/4')}>
             <div className="flex items-center justify-between w-full mb-5">
-                <h1 className="text-3xl font-semibold">Available Jobs</h1>
+                <h1 className="text-3xl font-semibold">{props.title}</h1>
                 <div className="flex gap-2 items-center text-sm">
                     <p className="text-gray-400 font-semibold">Sort by:</p>
                     <Select defaultValue={"latest"}>
